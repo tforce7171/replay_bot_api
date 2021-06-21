@@ -3,6 +3,7 @@ from flask_restful import Api, Resource
 from flask_cors import CORS
 import json
 import os
+import psycopg2
 
 app = Flask(__name__)
 api = Api(app)
