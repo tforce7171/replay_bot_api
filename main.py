@@ -39,7 +39,8 @@ class DeleteReplay(Resource):
     def delete(self, replay_name):
         conn = DBConnect()
         cur = conn.cursor()
-        cur.execute("DELETE FROM replay_data WHERE filename='%s'", (replay_name,))
+        command = f'DELETE FROM replay_data WHERE filename='{replay_name}''
+        cur.execute(command)
         return {"result":"success"}
 
 def DBConnect():
