@@ -16,7 +16,7 @@ class GetReplay(Resource):
         conn = DBConnect()
         cur = conn.cursor()
         cur.execute('SELECT * FROM replay_data')
-        replay_data_list = dict(cur.fetchall())
+        replay_data_list = cur.fetchall()
         replay_data_hash = {}
         for replay_data in replay_data_list:
             replay_data_hash[replay_data[0]] = {
