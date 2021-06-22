@@ -40,6 +40,7 @@ class DeleteReplay(Resource):
         conn = DBConnect()
         cur = conn.cursor()
         command = "DELETE FROM replay_data WHERE filename=\'" + replay_name + "\'"
+        print(command)
         cur.execute(command)
         return {"result":"success"}
 
